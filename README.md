@@ -16,7 +16,7 @@ wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50
 ```python
 wget https://www.dropbox.com/scl/fi/sgtkp0by8p7f4u4c0fh0i/epoch_8.pth?rlkey=zmvpwjce9anpqx6o03gvubvi3&st=s6q8s1c9&dl=1
 ```
-  - 或者，Repo中下载：weights/faster-r-cnn/下的文件，全部下载，再解压epoch_8.zip
+    - 或者，Repo中下载：weights/faster-r-cnn/下的文件，全部下载，再解压epoch_8.zip
 
 **3. 制作数据集**
 YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。
