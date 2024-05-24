@@ -2,6 +2,7 @@
 **1. 调整配置文件**
 
 按照Repo中的相对位置，将需要修改的配置放入mmdetection文件夹中。
+
 接着，调整目录
 ```python
 cd mmdetection
