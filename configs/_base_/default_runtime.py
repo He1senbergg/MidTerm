@@ -21,7 +21,7 @@ log_processor = dict(type='LogProcessor', window_size=50, by_epoch=True)
 
 log_level = 'INFO'
 # 预训练权重
-load_from = 'checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth'
+load_from = None
 resume = False
 
 # 添加混合精度训练配置
