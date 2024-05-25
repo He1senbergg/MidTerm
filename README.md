@@ -71,9 +71,3 @@ python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
 ```
 python test/test_yolo.py
 ```
-python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py epoch_8.pth --out results.pkl
-```
-挑选图像结果
-```python
-python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py results.pkl results --topk 20
-```
