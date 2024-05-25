@@ -53,6 +53,7 @@ python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_r
 **3. 推理**
 
 在test/test_fasterrcnn.py，设置本地的pth（模型权重）、configs（配置信息）、picture（放入需要目标检测的图片）、result（目标检测结果）的位置。
+
 运行命令行代码
 ```
 python test/test_fasterrcnn.py
@@ -67,6 +68,7 @@ python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
 **2. 推理**
 
 在test/test_yolo.py，设置本地的pth（模型权重）、configs（配置信息）、picture（放入需要目标检测的图片）、result（目标检测结果）的位置。
+
 运行命令行代码
 ```
 python test/test_yolo.py
