@@ -175,7 +175,7 @@ optim_wrapper = dict(
 
 # learning policy
 param_scheduler = [
-    # dict(type='LinearLR', start_factor=0.1, by_epoch=False, begin=0, end=1000), # 线性增加学习率在前1000次迭代中完成
+    dict(type='LinearLR', start_factor=0.1, by_epoch=False, begin=0, end=1000), # 线性增加学习率在前1000次迭代中完成
     dict(type='MultiStepLR', by_epoch=True, milestones=[218, 246], gamma=0.1) # 更改学习率衰退点
 ]
 
