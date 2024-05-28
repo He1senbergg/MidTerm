@@ -38,6 +38,7 @@ YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。
 - main_path: 原始VOC数据集的摆放位置
 
 示例如下：
+
 ![image](https://github.com/He1senbergg/MidTerm-Part-II/assets/148076707/79c5979f-1268-4d36-9170-e59b8770b0d7)
 
 运行时，该python文件，需放在VOCdevkit同级。示例如下：
