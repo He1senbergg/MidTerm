@@ -135,7 +135,7 @@ python voc_to_coco.py
 
 使用Faster-R-CNN预训练权重进行训练。
 
-命令行运行代码
+命令行运行代码（此处请确保已经执行“三、Ⅰ.1.”中的切换主目录，或直接以绝对位置执行。）
 ```
 python tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py
 ```
@@ -144,13 +144,13 @@ python tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py
 
 生成测试文件
 
-命令行运行代码
+命令行运行代码（此处请确保已经执行“三、Ⅰ.1.”中的切换主目录，或直接以绝对位置执行。）
 ```
 python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py epoch_8.pth --out results.pkl
 ```
 挑选图像结果
 
-命令行运行代码
+命令行运行代码（此处请确保已经执行“三、Ⅰ.1.”中的切换主目录，或直接以绝对位置执行。）
 ```
 python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py results.pkl results --topk 20
 ```
@@ -167,7 +167,7 @@ python test/test.py --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/wor
 ## Ⅲ. YOLO V3
 **1. 训练**
 
-命令行运行代码
+命令行运行代码（此处请确保已经执行“三、Ⅰ.1.”中的切换主目录，或直接以绝对位置执行。）
 ```python
 python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
 ```
