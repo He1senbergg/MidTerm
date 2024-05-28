@@ -58,6 +58,11 @@
 
 ## 3. 测试
 
+测试的效果为：输出如下信息
+```python
+print(f'Test Loss: {val_loss:.4f}, Test Accuracy: {val_acc:.4f}, Test Time: {val_elapsed_time:.2f}s')
+```
+
 测试时，需要提供两个参数`--data_dir`、`--model_path`。
 
 命令行运行代码，示例如下（请注意修改以下的信息的绝对位置）：
