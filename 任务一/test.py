@@ -15,7 +15,6 @@ from model import load_model, train_model
 def parse_args():
     parser = argparse.ArgumentParser(description="Test a ResNet model on the CUB-200-2011 dataset.")
     parser.add_argument('--data_dir', type=str, default=r'/mnt/ly/models/deep_learning/mid_term/data/CUB_200_2011', help='Path to the CUB-200-2011 dataset directory.')
-    parser.add_argument('--batch_size', type=int, default=32, help='Batch size for training.')
     parser.add_argument('--model_path', type=str, default=None, help='Path to a saved model checkpoint to continue training.')
     return parser.parse_args()
 
@@ -23,7 +22,7 @@ def main():
     args = parse_args()
     
     data_dir = args.data_dir
-    batch_size = args.batch_size
+    batch_size = 32
     model_path = args.model_path
 
     transform = data_transforms()
