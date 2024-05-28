@@ -31,6 +31,22 @@ wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50
 
 YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。
 
+需要自定义修改的部分
+- val_files_num: 验证集数量
+- test_files_num: 测试集数量
+- voc_annotations: 原始VOC数据集摆放位置中Annotations文件夹位置信息
+- main_path: 原始VOC数据集的摆放位置
+
+示例如下：
+![image](https://github.com/He1senbergg/MidTerm-Part-II/assets/148076707/79c5979f-1268-4d36-9170-e59b8770b0d7)
+
+运行时，该python文件，需放在VOCdevkit同级。示例如下：
+
+命令行运行代码
+```
+python voc_to_coco.py
+```
+
 # Faster-R-CNN
 **1. 训练**
 
