@@ -14,11 +14,26 @@
 下载“任务一/”下的三个python文件，放在同级目录
 
 **2. 可调参数概述**
-| 列1标题 | 列2标题 | 列3标题 |
-| ------- | ------- | ------- |
-| 单元格1 | 单元格2 | 单元格3 |
-| 单元格4 | 单元格5 | 单元格6 |
-
+| 参数名 | 类型	 | 默认值 | 描述 |
+| ------- | ------- | ------- | ------- |
+| `--data_dir` | 单元格2 | 单元格3 | ------- |
+| 单元格4 | 单元格5 | 单元格6 | ------- |
+    parser = argparse.ArgumentParser(description="Train a ResNet model on the CUB-200-2011 dataset.")
+    parser.add_argument('--num_classes', type=int, default=200, help='Number of classes in the dataset.')
+    parser.add_argument('', type=str, default=r'/mnt/ly/models/deep_learning/mid_term/data/CUB_200_2011', help='Path to the CUB-200-2011 dataset directory.')
+    parser.add_argument('--batch_size', type=int, default=32, help='Batch size for training.')
+    parser.add_argument('--num_epochs', type=int, default=70, help='Number of epochs for training.')
+    parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate for the optimizer.')
+    parser.add_argument('--momentum', type=float, default=0.9, help='Momentum for the SGD optimizer.')
+    parser.add_argument('--weights', type=str, default='IMAGENET1K_V1', help='Pre-trained weights to use.')
+    parser.add_argument('--model_path', type=str, default=None, help='Path to a saved model checkpoint to continue training.')
+    parser.add_argument('--optimizer', type=str, choices=['SGD', 'Adam'], default='SGD', help='Optimizer to use (SGD or Adam).')
+    parser.add_argument('--logdir', type=str, default="/mnt/ly/models/deep_learning/mid_term/tensorboard/1", help='Directory to save TensorBoard logs.')
+    parser.add_argument('--save_dir', type=str, default="/mnt/ly/models/deep_learning/mid_term/model", help='Directory to save model checkpoints.')
+    parser.add_argument('--scratch', type=bool, default=False, help='Train the model from scratch.')
+    parser.add_argument('--decay', type=float, default=1e-3, help='Weight decay for the optimizer.')
+    parser.add_argument('--milestones', type=list, default=None, help='List of epochs to decrease the learning rate.')
+    parser.add_argument('--gamma', type=float, default=0.1, help='Factor to decrease the learning rate.')
 
 # 任务二
 ## 准备步骤
