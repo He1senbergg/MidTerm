@@ -9,8 +9,19 @@
 
 # 任务一
 ## 准备步骤
+**1. 代码下载**
 
-# 准备步骤
+下载“任务一/”下的三个python文件，放在同级目录
+
+**2. 可调参数概述**
+| 列1标题 | 列2标题 | 列3标题 |
+| ------- | ------- | ------- |
+| 单元格1 | 单元格2 | 单元格3 |
+| 单元格4 | 单元格5 | 单元格6 |
+
+
+# 任务二
+## 准备步骤
 **1. 调整配置文件**
 
 按照Repo中的相对位置，将需要修改的配置放入mmdetection文件夹中。
@@ -60,7 +71,7 @@ YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。
 python voc_to_coco.py
 ```
 
-# Faster-R-CNN
+## Faster-R-CNN
 **1. 训练**
 
 使用Faster-R-CNN预训练权重进行训练。
@@ -88,7 +99,7 @@ python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_r
 python test/test_fasterrcnn.py
 ```
 
-# YOLO V3
+## YOLO V3
 **1. 训练**
 ```python
 python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
