@@ -8,15 +8,17 @@ import xml.etree.ElementTree as ET
 
 
 """
-You only need to set the following three parts
+You only need to set the following four parts
 1.val_files_num : num of validation samples from your all samples
 2.test_files_num = num of test samples from your all samples
 3.voc_annotations : path to your VOC dataset Annotations
- 
+4.main_path : path to your VOC dataset
 """
+
 val_files_num = 600
 test_files_num = 600
 voc_annotations = 'data/VOCdevkit/VOC2012/Annotations/'  #remember to modify the path 
+main_path = 'data/VOCdevkit'
 
 split = voc_annotations.split('/')
 coco_name = split[-3]
@@ -25,7 +27,6 @@ del split[-2]
 del split[-1]
 del split[0]
 # print(split)
-main_path = 'data/VOCdevkit'
 
 # print(main_path)
 
