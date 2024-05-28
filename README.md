@@ -22,16 +22,40 @@
 | `--num_epochs` | int | 70 | Number of epochs for training. |
 | `--learning_rate` | float | 0.001 | Learning rate for the optimizer. |
 | `--momentum` | float | 0.9 | Momentum for the SGD optimizer. |
-| `--weights` | str | IMAGENET1K_V1 | Pre-trained weights to use. |
-| `--model_path` | str | None | Path to a saved model checkpoint to continue training. |
+| `--weights` | str | IMAGENET1K_V1 | Pytorch中的ResNet预训练权重名称 |
+| `--model_path` | str | None | 读取本地pth |
 | `--optimizer` | str | SGD | Optimizer to use (SGD or Adam). |
 | `--logdir` | str | /mnt/ly/models/deep_learning/mid_term/tensorboard/1 | Directory to save TensorBoard logs. |
-| `--save_dir` | str | /mnt/ly/models/deep_learning/mid_term/model | Directory to save model checkpoints. |
-| `--scratch` | bool | False | Train the model from scratch. |
+| `--save_dir` | str | /mnt/ly/models/deep_learning/mid_term/model | 训练时保存pth的位置 |
+| `--scratch` | bool | False | 是否随机初始化 |
 | `--decay` | float | 1e-3 | Weight decay for the optimizer. |
 | `--milestones` | list | None | List of epochs to decrease the learning rate. |
-| `--gamma` | float | 0.1 | Factor to decrease the learning rate. |
+| `--gamma` | float | 0.1 | 当使用milestones时，每次学习率的缩放率 |
 
+**3. 必须自适应调整的参数**
+
+- `--data_dir`：改为本地CUB_200_2011的位置（绝对位置）
+- `--save_dir`：运行过程中，每当遇到更高的test-accuracy时，model的pth的保存位置（绝对位置）
+- `--logdir`：日志的保存地址（绝对位置）
+
+**2. 训练**
+
+命令行运行代码
+
+- 示例1（请注意修改以下的信息的绝对位置）：使用预训练模型与默认参数进行训练
+  ```
+  python train.py --data_dir /data/CUB_200_2011 --save_dir /model --logdir /tensorboard
+  ```
+- 示例2（请注意修改以下的信息的绝对位置）：使用预训练模型、Adam与其他默认参数开始训练
+  ```
+  python train.py --data_dir /data/CUB_200_2011 --save_dir /model --logdir /tensorboard --optimizer Adam
+  ```
+- 示例3（请注意修改以下的信息的绝对位置）：使用随机初始化与其他默认参数开始训练
+  ```
+  python train.py --data_dir /data/CUB_200_2011 --save_dir /model --logdir /tensorboard --scratch True
+  ```
+
+**3. 测试**
 
 
 # 任务二
