@@ -41,6 +41,8 @@ YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。
 
 ![image](https://github.com/He1senbergg/MidTerm-Part-II/assets/148076707/79c5979f-1268-4d36-9170-e59b8770b0d7)
 
+下载repo中的voc_to_coco.py，放在根目录下，mmdetection/voc_to_coco.py。
+
 命令行运行代码
 ```
 python voc_to_coco.py
