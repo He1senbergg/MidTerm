@@ -6,11 +6,11 @@ import pandas as pd
 from PIL import Image
 import torch.nn as nn
 from model import load_model
+from model import load_model, train_model
 import torchvision.transforms as transforms
 from torchvision.models import ResNet18_Weights
 from torch.utils.data import DataLoader, Dataset
 from dataloader import data_transforms, load_data
-from model import load_model, train_model
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Test a ResNet model on the CUB-200-2011 dataset.")
