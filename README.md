@@ -13,6 +13,11 @@
 
 下载“任务一/”下的四个python文件，放在同级目录
 
+调整终端目录，以便train.py能方便的导入其他同级目录的函数。
+```
+cd 四个文件摆放的同级目录位置
+```
+
 **2. 可调参数概述**
 | 参数名 | 类型 | 默认值 | 描述 |
 | ------- | ------- | ------- | ------- |
@@ -102,7 +107,7 @@ wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50
 
 **3. 制作数据集**
 
-YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。
+YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。作业中，只转化了2012数据集用来使用。
 
 需要自定义修改的部分
 - val_files_num: 验证集数量
@@ -144,9 +149,9 @@ python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_r
 
 在test/test_fasterrcnn.py，设置本地的pth（模型权重）、configs（配置信息）、picture（放入需要目标检测的图片）、result（目标检测结果）的位置。
 
-运行命令行代码
+运行命令行代码（请注意修改以下的信息的绝对位置）
 ```
-python test/test_fasterrcnn.py
+python test/test.py --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/faster-rcnn/1/epoch_8.pth' --fasterconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result"
 ```
 
 ## YOLO V3
@@ -159,7 +164,13 @@ python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
 
 在test/test_yolo.py，设置本地的pth（模型权重）、configs（配置信息）、picture（放入需要目标检测的图片）、result（目标检测结果）的位置。
 
-运行命令行代码
+运行命令行代码（请注意修改以下的信息的绝对位置）
 ```
-python test/test_yolo.py
+python test/test.py --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/3/epoch_273.pth' --yoloconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/yolo/yolov3_d53_8xb8-320-273e_coco.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result"
+```
+
+## 对比Faster-R-CNN与YOLO V3
+命令行运行代码（请注意修改以下的信息的绝对位置）
+```
+python test/test.py --compare True --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/faster-rcnn/1/epoch_8.pth' --fasterconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py" --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/3/epoch_273.pth' --yoloconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/yolo/yolov3_d53_8xb8-320-273e_coco.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result/Comparison"
 ```
