@@ -140,7 +140,7 @@ python voc_to_coco.py
 python tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py
 ```
 
-**2. 测试**
+**2. 测试VOC数据集**
 
 生成测试文件
 
@@ -155,9 +155,11 @@ python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py epoch
 python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py results.pkl results --topk 20
 ```
 
-**3. 推理**
+**3. 推理数据集外图片**
 
-在test/test_fasterrcnn.py，设置本地的pth（模型权重）、configs（配置信息）、picture（放入需要目标检测的图片）、result（目标检测结果）的位置。
+在test/test.py，设置本地的`--fasterpth`（模型权重）、`--fasterconfig`（配置信息）、`--imgfolder`（放入需要目标检测的图片）、`--output`（目标检测结果）的位置。
+
+或直接如下，在命令行中输入这四个参数的信息。
 
 命令行运行代码（请注意修改以下的信息的绝对位置）
 ```
@@ -172,9 +174,11 @@ python test/test.py --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/wor
 python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
 ```
 
-**2. 推理**
+**2. 推理数据集外图片**
 
-在test/test_yolo.py，设置本地的pth（模型权重）、configs（配置信息）、picture（放入需要目标检测的图片）、result（目标检测结果）的位置。
+在test/test.py，设置本地的`--yolopth`（模型权重）、`--yoloconfig`（配置信息）、`--imgfolder`（放入需要目标检测的图片）、`--output`（目标检测结果）的位置。
+
+或直接如下，在命令行中输入这四个参数的信息。
 
 命令行运行代码（请注意修改以下的信息的绝对位置）
 ```
@@ -182,6 +186,10 @@ python test/test.py --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_
 ```
 
 ## Ⅳ. 对比Faster-R-CNN与YOLO V3
+在test/test.py，设置本地的`--compare`（是否进行对比，即两个模型的结果通过plt放在一行中展示）、`--fasterpth`（模型权重）、`--fasterconfig`（配置信息）、`--yolopth`（模型权重）、`--yoloconfig`（配置信息）、`--imgfolder`（放入需要目标检测的图片）、`--output`（目标检测结果）的位置。
+
+或直接如下，在命令行中输入这四个参数的信息。
+
 命令行运行代码（请注意修改以下的信息的绝对位置）
 ```
 python test/test.py --compare True --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/faster-rcnn/1/epoch_8.pth' --fasterconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py" --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/3/epoch_273.pth' --yoloconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/yolo/yolov3_d53_8xb8-320-273e_coco.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result/Comparison"
