@@ -83,6 +83,8 @@ python test.py --data_dir /data/CUB_200_2011 --model_path model.pth
 
 按照Repo中的相对位置，将需要修改的配置放入mmdetection文件夹中。
 
+*请注意，其中`analyze_results.py`，是在文件夹mmdetection/tools/analysis_tools/analyze_results.py*
+
 接着，调整目录
 
 命令行运行代码
