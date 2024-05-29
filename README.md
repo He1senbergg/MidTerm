@@ -92,7 +92,7 @@ cd mmdetection
 
 **2. 下载模型权重**
 
-- Faster-R-CNN预训练权重：
+- Faster-R-CNN预训练权重（此处请确保已经执行“三、Ⅰ.1.”中的切换主目录，或直接以绝对位置执行。）：
 ```python
 wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth -P checkpoints/
 ```
