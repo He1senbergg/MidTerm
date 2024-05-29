@@ -160,6 +160,19 @@ python tools/analysis_tools/analyze_results_copy.py configs/faster_rcnn/faster_r
 
 或直接如下，在命令行中输入这四个参数的信息。
 
+- 同时，可以以`--bbox_color`（锚框颜色）、`--text_color`（类别字体颜色）。
+
+- 示例代码（该代码只是说明颜色的便捷设置途径，真正执行需仿照之后的代码，提供其余信息）：
+  ```
+  python test/test.py --bbox_color white --text_color red
+  ```
+- 并且我修改了from mmcv.visualization.image import imshow_det_bboxes
+  在此处，给函数补上了参数`thickness=2`，以加粗字体。
+  ```
+          cv2.putText(img, label_text, (bbox_int[0], bbox_int[1] - 2),
+                    cv2.FONT_HERSHEY_COMPLEX, font_scale, text_color, thickness=2)
+  ```
+
 命令行运行代码（请注意修改以下的信息的绝对位置）
 ```
 python test/test.py --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/faster-rcnn/1/epoch_8.pth' --fasterconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result"
@@ -179,6 +192,19 @@ python tools/train.py configs/yolo/yolov3_d53_8xb8-320-273e_coco.py
 
 或直接如下，在命令行中输入这四个参数的信息。
 
+- 同时，可以以`--bbox_color`（锚框颜色）、`--text_color`（类别字体颜色）。
+
+- 示例代码（该代码只是说明颜色的便捷设置途径，真正执行需仿照之后的代码，提供其余信息）：
+  ```
+  python test/test.py --bbox_color white --text_color red
+  ```
+- 并且我修改了from mmcv.visualization.image import imshow_det_bboxes
+  在此处，给函数补上了参数`thickness=2`，以加粗字体。
+  ```
+          cv2.putText(img, label_text, (bbox_int[0], bbox_int[1] - 2),
+                    cv2.FONT_HERSHEY_COMPLEX, font_scale, text_color, thickness=2)
+  ```
+  
 命令行运行代码（请注意修改以下的信息的绝对位置）
 ```
 python test/test.py --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/3/epoch_273.pth' --yoloconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/yolo/yolov3_d53_8xb8-320-273e_coco.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result"
@@ -189,6 +215,19 @@ python test/test.py --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_
 
 或直接如下，在命令行中输入这四个参数的信息。
 
+- 同时，可以以`--bbox_color`（锚框颜色）、`--text_color`（类别字体颜色）。
+
+- 示例代码（该代码只是说明颜色的便捷设置途径，真正执行需仿照之后的代码，提供其余信息）：
+  ```
+  python test/test.py --bbox_color white --text_color red
+  ```
+- 并且我修改了from mmcv.visualization.image import imshow_det_bboxes
+  在此处，给函数补上了参数`thickness=2`，以加粗字体。
+  ```
+          cv2.putText(img, label_text, (bbox_int[0], bbox_int[1] - 2),
+                    cv2.FONT_HERSHEY_COMPLEX, font_scale, text_color, thickness=2)
+  ```
+  
 命令行运行代码（请注意修改以下的信息的绝对位置）
 ```
 python test/test.py --compare True --fasterpth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/faster-rcnn/1/epoch_8.pth' --fasterconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/faster_rcnn/faster_rcnn_r50_fpn_1x_voc0712.py" --yolopth '/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/3/epoch_273.pth' --yoloconfig "/mnt/ly/models/mmdetection/mmdetection-main/configs/yolo/yolov3_d53_8xb8-320-273e_coco.py" --imgfolder "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/1" --output "/mnt/ly/models/mmdetection/mmdetection-main/work_dirs/cfm/yolov3/test_1/out_picture/result/Comparison"
