@@ -112,13 +112,13 @@ wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50
 - 本地服务器训练以后的Faster-R-CNN模型权重文件
   - dropbox下载
   ```
-  wget https://www.dropbox.com/scl/fi/sgtkp0by8p7f4u4c0fh0i/epoch_8.pth?rlkey=zmvpwjce9anpqx6o03gvubvi3&st=s6q8s1c9&dl=1
+  wget https://www.dropbox.com/scl/fi/sgtkp0by8p7f4u4c0fh0i/epoch_8.pth?rlkey=zmvpwjce9anpqx6o03gvubvi3&st=arx3wpfi&dl=1
   ```
 
 - 本地服务器训练以后的YOLO V3模型权重文件
   - dropbox下载
   ```
-  wget https://www.dropbox.com/scl/fi/qa7ziesle7kxfunojsxcc/epoch_273.pth?rlkey=mopji9d302b0q7gh234v73weg&st=ir8gcntv&dl=1
+  wget https://www.dropbox.com/scl/fi/qa7ziesle7kxfunojsxcc/epoch_273.pth?rlkey=mopji9d302b0q7gh234v73weg&st=h1i1z1nc&dl=1
   ```
 
 **3. 制作数据集**
