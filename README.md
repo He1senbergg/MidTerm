@@ -105,7 +105,7 @@ wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50
 - 本地服务器训练以后的YOLO V3模型权重文件
   - dropbox下载
   ```
-  https://www.dropbox.com/scl/fi/qa7ziesle7kxfunojsxcc/epoch_273.pth?rlkey=mopji9d302b0q7gh234v73weg&st=ir8gcntv&dl=1
+  wget https://www.dropbox.com/scl/fi/qa7ziesle7kxfunojsxcc/epoch_273.pth?rlkey=mopji9d302b0q7gh234v73weg&st=ir8gcntv&dl=1
   ```
 
 **3. 制作数据集**
