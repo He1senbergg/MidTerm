@@ -46,6 +46,13 @@ cd 四个文件摆放的同级目录位置
 - `--save_dir`：运行过程中，每当遇到更高的test-accuracy时，model的pth的保存位置（绝对位置）
 - `--logdir`：日志的保存地址（绝对位置）
 
+**4. 下载模型权重文件**
+
+该模型权重，是在pre-trained的ResNet-18基础上微调得到的结果。
+```
+wget https://www.dropbox.com/scl/fi/60rnqnk25st3p0f72163t/23_0.7041767345529858.pth?rlkey=k4fahzd92cn8chax1br9ynuvo&st=i83qjicl&dl=1
+```
+
 ## Ⅱ. 训练
 
 命令行运行代码
@@ -61,6 +68,10 @@ cd 四个文件摆放的同级目录位置
 - 示例3（请注意修改以下的信息的绝对位置）：使用随机初始化与其他默认参数开始训练
   ```
   python train.py --data_dir /data/CUB_200_2011 --save_dir /model --logdir /tensorboard --scratch True
+  ```
+- 示例4（请注意修改以下的信息的绝对位置）：使用本地模型pth与其他默认参数开始训练
+  ```
+  python train.py --data_dir /data/CUB_200_2011 --save_dir /model --logdir /tensorboard --model_path model.pth
   ```
 
 ## Ⅲ. 测试
