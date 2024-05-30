@@ -125,9 +125,11 @@ wget https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50
 
 YOLO需要COCO类型数据，将VOC数据集转换为COCO数据集。作业中，只转化了2012数据集用来使用。
 
-需要自定义修改的部分
+可以自定义修改的部分
 - val_files_num: 验证集数量
 - test_files_num: 测试集数量
+
+必须自定义修改的部分
 - voc_annotations: 原始VOC数据集摆放位置中Annotations文件夹位置信息
 - main_path: 原始VOC数据集的摆放位置
 
